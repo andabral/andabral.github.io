@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="Andabral, Desarrollador Ecuador, Desarrollador Guayaquil">
-  <meta name="description" content="Web Developer - Andabral Portfolio">
+  <meta name="description" content="Portfolio profesional de Angel Bracero">
   
   <title>Portfolio web - Personal Portfolio</title>
 
@@ -29,6 +29,16 @@
 </head>
 
 <body>
+
+  <!-- Selector de idioma -->
+  <div id="lang-switcher" style="position: fixed; top: 20px; right: 30px; z-index: 9999; display: flex; gap: 10px;">
+    <button id="btn-es" data-lang="es" aria-label="Español" style="background: none; border: none; cursor: pointer; font-size: 24px; outline: none;">
+      <span id="icon-es" style="font-size: 24px;">🇪🇸</span>
+    </button>
+    <button id="btn-en" data-lang="en" aria-label="English" style="background: none; border: none; cursor: pointer; font-size: 24px; outline: none;">
+      <span id="icon-en" style="font-size: 24px;">🇺🇸</span>
+    </button>
+  </div>
 
   <!--
     - #MAIN
@@ -70,13 +80,13 @@
         
         
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Angel Bracero" width="80">
+          <img src="./assets/images/my-face.jpg" alt="Angel Bracero" width="80">
         </figure>
 
         <div class="info-content">
           <h1 class="name" title="Angel Bracero">Angel Bracero</h1>
 
-          <p class="title"><span>Web developer</span> <span>Project Manager</span><span>Database Administrator</span></p>
+          <p class="title"><span data-i18n="webDevelopment">Web developer</span> <span data-i18n="projectManager">Project Manager</span><span data-i18n="databaseAdmin">Database Administrator</span></p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -100,7 +110,7 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Email</p>
+              <p class="contact-title" data-i18n="email">Email</p>
 
               <a href="mailto:andabral@gmail.com" class="contact-link">andabral@gmail.com</a>
             </div>
@@ -114,7 +124,7 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Phone</p>
+              <p class="contact-title" data-i18n="phone">Phone</p>
 
               <a href="tel:+593980368616" class="contact-link">+593 980368616</a>
             </div>
@@ -129,7 +139,7 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Phone</p>
+              <p class="contact-title" data-i18n="phone">Phone</p>
 
               <a href="https://wa.me/593980368616?text=Hola%20Angel,%20acabo%20de%20ver%20tu%20perfil%20y%20desearía%20contactarme%20contigo" class="contact-link">+593 980368616</a>
             </div>
@@ -143,7 +153,7 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Birthday</p>
+              <p class="contact-title" data-i18n="birthday">Birthday</p>
 
               <time datetime="1986-03-14">March 14, 1986</time>
             </div>
@@ -157,7 +167,7 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Location</p>
+              <p class="contact-title" data-i18n="location">Location</p>
 
               <address>Milagro, Milagro, Ecuador</address>
             </div>
@@ -192,23 +202,23 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link  active" data-nav-link data-i18n="about">About</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" data-nav-link data-i18n="resume">Resume</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link data-i18n="portfolio">Portfolio</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
+            <button class="navbar-link" data-nav-link data-i18n="blog">Blog</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
+            <button class="navbar-link" data-nav-link data-i18n="contact">Contact</button>
           </li>
 
         </ul>
@@ -226,21 +236,47 @@
       <article class="about  active" data-page="about">
 
         <header>
-          <h2 class="h2 article-title">About me</h2>
+          <h2 class="h2 article-title" data-i18n="about">About me</h2>
         </header>
 
-        <section class="about-text">
-          <p>
-            I'm Creative Director and UI/UX Designer from Milagro, Ecuador, working in web development and print media.
-            I enjoy
-            turning complex problems into simple, beautiful and intuitive designs.
-          </p>
+        <section class="about-text" aria-labelledby="about-heading">
+          
+          <div class="professional-summary">
+            <p role="text" aria-label="Resumen de cualificaciones">
+  <figure class="avatar-box">
+    <img src="./assets/images/my-avatar.png" alt="Angel Bracero" width="80">
+    <figcaption data-i18n="aboutDescription">Especialista en Gestión de Proyectos Tecnológicos, con más de 10 años de experiencia liderando proyectos de desarrollo, implementación y gestión de sistemas informáticos e infraestructura tecnológica. He trabajado en sectores clave como telecomunicaciones, salud, finanzas, industria y farmacéutica. Experto en administración de redes y servidores, incluyendo bases de datos, dominios, correo electrónico, servidores proxy, DHCP, web, FTP, entre otros. Amplia experiencia brindando soporte técnico a usuarios y gestionando relaciones con proveedores. Apasionado por las tecnologías emergentes, el desarrollo web y la innovación digital. En constante actualización y búsqueda de soluciones eficientes que impulsen la transformación tecnológica de las organizaciones.</figcaption>
+  </figure>
+</p>
 
-          <p>
-           Technology Project Management Specialist, with over 10 years of experience leading development, implementation, and management of IT systems and infrastructure across key industries such as telecommunications, healthcare, finance, industrial, and pharmaceutical sectors.
-Skilled in network and server administration, including databases, domains, email systems, proxy servers, DHCP, web, FTP, and more. Strong background in technical support and vendor management.
-Passionate about emerging technologies, web development, and digital innovation. Constantly seeking to improve processes and drive technological transformation within organizations.
-          </p>
+            <div role="lim class="interactive-item">
+              <ion-icon name="briefcase-outline" class="list-icon" aria-hidden="true"></ion-icon>
+              <span class="skill-text" data-i18n="aboutSkill1">+10 años en implementación de sistemas IT</span>
+            </div>
+            
+            <ul class="qualification-list" role="list">
+            <div class="skills-column">
+            <li role="listitem" class="interactive-item">
+              <ion-icon name="code-slash-outline" class="list-icon" aria-hidden="true"></ion-icon>
+              <span class="skill-text" data-i18n="aboutSkill2">Full Stack Developer</span>
+            </li>
+            <li role="listitem" class="interactive-item">
+              <ion-icon name="briefcase-outline" class="list-icon" aria-hidden="true"></ion-icon>
+              <span class="skill-text" data-i18n="aboutSkill3">Project Manager</span>
+            </li>
+            </div>
+            <div class="skills-column">
+            <li role="listitem" class="interactive-item">
+              <ion-icon name="git-network-outline" class="list-icon" aria-hidden="true"></ion-icon>
+              <span class="skill-text" data-i18n="aboutSkill4">Especialista de redes</span>
+            </li>
+            <li role="listitem" class="interactive-item">
+              <ion-icon name="cloud-outline" class="list-icon" aria-hidden="true"></ion-icon>
+              <span class="skill-text" data-i18n="aboutSkill5">Cloud Computing</span>
+            </li>
+            </div>
+          </ul>
+          </div>
         </section>
 
 
@@ -250,7 +286,7 @@ Passionate about emerging technologies, web development, and digital innovation.
 
         <section class="service">
 
-          <h3 class="h3 service-title">What i'm doing</h3>
+          <h3 class="h3 service-title" data-i18n="whatIDoing">What i'm doing</h3>
 
           <ul class="service-list">
 
@@ -262,11 +298,9 @@ Passionate about emerging technologies, web development, and digital innovation.
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
+                <h4 class="h4 service-item-title" data-i18n="webDesign">Web design</h4>
 
-                <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
-                </p>
+                <p class="service-item-text" data-i18n="serviceWebDesign">El diseño más moderno y de alta calidad realizado a nivel profesional.</p>
               </div>
 
             </li>
@@ -278,11 +312,9 @@ Passionate about emerging technologies, web development, and digital innovation.
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
+                <h4 class="h4 service-item-title" data-i18n="webDevelopment">Web development</h4>
 
-                <p class="service-item-text">
-                  High-quality development of sites at the professional level.
-                </p>
+                <p class="service-item-text" data-i18n="serviceWebDevelopment">Desarrollo de sitios web de alta calidad a nivel profesional.</p>
               </div>
 
             </li>
@@ -294,11 +326,9 @@ Passionate about emerging technologies, web development, and digital innovation.
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile apps</h4>
+                <h4 class="h4 service-item-title" data-i18n="mobileApps">Mobile apps</h4>
 
-                <p class="service-item-text">
-                  Professional development of applications for iOS and Android.
-                </p>
+                <p class="service-item-text" data-i18n="serviceMobileApps">Desarrollo profesional de aplicaciones para iOS y Android.</p>
               </div>
 
             </li>
@@ -310,11 +340,9 @@ Passionate about emerging technologies, web development, and digital innovation.
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Database Administrator</h4>
+                <h4 class="h4 service-item-title" data-i18n="databaseAdmin">Database Administrator</h4>
 
-                <p class="service-item-text">
-                  I manage and improve the performance of the databases, increase their level of production.
-                </p>
+                <p class="service-item-text" data-i18n="serviceDatabaseAdmin">Gestiono y mejoro el rendimiento de las bases de datos, aumentando su nivel de producción.</p>
               </div>
 
             </li>
@@ -328,7 +356,7 @@ Passionate about emerging technologies, web development, and digital innovation.
           - testimonials
         -->
 
-        <section class="testimonials">
+        <!--section class="testimonials">
 
           <h3 class="h3 testimonials-title">Testimonials</h3>
 
@@ -424,7 +452,7 @@ Passionate about emerging technologies, web development, and digital innovation.
 
           </ul>
 
-        </section>
+        </section-->
 
 
         <!--
@@ -478,7 +506,7 @@ Passionate about emerging technologies, web development, and digital innovation.
 
         <section class="clients">
 
-          <h3 class="h3 clients-title">Clients</h3>
+          <h3 class="h3 clients-title" data-i18n="clients">Clients</h3>
 
           <ul class="clients-list has-scrollbar">
 
@@ -523,54 +551,53 @@ Passionate about emerging technologies, web development, and digital innovation.
       <article class="resume" data-page="resume">
 
         <header>
-          <h2 class="h2 article-title">Resume</h2>
+          <h2 class="h2 article-title" data-i18n="resume">Resume</h2>
         </header>
 
         <section class="timeline">
 
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+          <div class="title-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+              <h3 class="h3" data-i18n="education">Education</h3>
             </div>
-
-            <h3 class="h3">Education</h3>
+            <a href="assets/files/cv_ANGEL_DAVID_BRACERO_ALBAN.pdf" download class="cv-download-btn" id="cv-download-btn" style="display: flex; align-items: center; gap: 6px; background: #e74c3c; color: #fff; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 15px; transition: background 0.2s;">
+              <ion-icon name="document-outline" style="font-size: 20px;"></ion-icon>
+              <span data-i18n="downloadCV">Descargar CV</span>
+            </a>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Escuela Superior Politécnica del Litoral</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="edu1Title">Escuela Superior Politécnica del Litoral</h4>
 
               <span>2015 — 2017</span>
 
-              <p class="timeline-text">
-                Master's degree in management information systems.
-              </p>
+              <p class="timeline-text" data-i18n="edu1Desc">Maestría en sistemas de información gerencial.</p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Escuela Superior Politécnica del Litoral</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="edu2Title">Escuela Superior Politécnica del Litoral</h4>
 
               <span>2004 — 2011</span>
 
-              <p class="timeline-text">
-                Graduate of Engineering in computer sciences
-              </p>
+              <p class="timeline-text" data-i18n="edu2Desc">Ingeniería en Ciencias Computacionales</p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">High school Military Tnte. Hugo Ortiz</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="edu3Title">High school Military Tnte. Hugo Ortiz</h4>
 
               <span>2002 — 2004</span>
 
-              <p class="timeline-text">
-                Graduate of Mathematical Physics
-              </p>
+              <p class="timeline-text" data-i18n="edu3Desc">Bachiller en Física Matemática</p>
 
             </li>
 
@@ -585,67 +612,52 @@ Passionate about emerging technologies, web development, and digital innovation.
               <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Experience</h3>
+            <h3 class="h3" data-i18n="experience">Experience</h3>
           </div>
 
-          <ol class="timeline-list">
+          <ol class="timeline-list" id="experience-list">
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Creative director</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="exp1Title">Creative director</h4>
 
-              <span>2015 — Present</span>
+              <span class="timeline-text" data-i18n="exp1Ano">2015 — Present</span>
 
-              <p class="timeline-text">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
-              </p>
+              <p class="timeline-text" data-i18n="exp1Desc">Responsable de la dirección creativa y gestión de proyectos innovadores.</p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Art director</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="exp2Title">Art director</h4>
 
-              <span>2013 — 2015</span>
+              <span class="timeline-text" data-i18n="exp2Ano">2015 — Present</span>
 
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
+              <p class="timeline-text" data-i18n="exp2Desc">Encargado de la dirección artística y supervisión de equipos creativos.</p>
 
             </li>
 
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Web designer</h4>
-
+            <li class="timeline-item experience-extra" style="display:none;">
+              <h4 class="h4 timeline-item-title" data-i18n="exp3Title">Web designer</h4>
               <span>2010 — 2013</span>
-
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-
+              <p class="timeline-text" data-i18n="exp3Desc">Diseño y desarrollo de sitios web atractivos y funcionales.</p>
             </li>
-
           </ol>
-
+          <button id="btn-see-more-exp" style="margin: 10px 0 0 0; padding: 6px 18px; background: #e67e22; color: #fff; border: none; border-radius: 6px; font-weight: 500; font-size: 15px; cursor: pointer;" data-i18n="seeMore">Ver más</button>
         </section>
 
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
+        <section class="skills-icons">
+          
+          <h3 class="h3 skills-title" data-i18n="skills">My skills</h3>
+          
+          <p class="skills" align="left"> <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a> <a href="https://azure.microsoft.com/en-in/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" alt="azure" width="40" height="40"/> </a> <a href="https://www.chartjs.org" target="_blank" rel="noreferrer"> <img src="https://www.chartjs.org/media/logo-title.svg" alt="chartjs" width="40" height="40"/> </a> <a href="https://codeigniter.com" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/codeigniter.svg" alt="codeigniter" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://laravel.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-plain-wordmark.svg" alt="laravel" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer"> <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.oracle.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" alt="oracle" width="40" height="40"/> </a> <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/> </a> <a href="https://spring.io/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="spring" width="40" height="40"/> </a> <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/> </a> <a href="https://symfony.com" target="_blank" rel="noreferrer"> <img src="https://symfony.com/logos/symfony_black_03.svg" alt="symfony" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> <a href="https://vuejs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="40" height="40"/> </a> </p>
 
           <ul class="skills-list content-card">
 
             <li class="skills-item">
 
               <div class="title-wrapper">
-                <h5 class="h5">Web design</h5>
+                <h5 class="h5" data-i18n="webDesign">Web design</h5>
                 <data value="80">80%</data>
               </div>
 
@@ -658,7 +670,7 @@ Passionate about emerging technologies, web development, and digital innovation.
             <li class="skills-item">
 
               <div class="title-wrapper">
-                <h5 class="h5">Database Administrator</h5>
+                <h5 class="h5" data-i18n="databaseAdmin">Database Administrator</h5>
                 <data value="70">70%</data>
               </div>
 
@@ -671,7 +683,7 @@ Passionate about emerging technologies, web development, and digital innovation.
             <li class="skills-item">
 
               <div class="title-wrapper">
-                <h5 class="h5">Web Developer</h5>
+                <h5 class="h5" data-i18n="webDevelopment">Web Developer</h5>
                 <data value="90">90%</data>
               </div>
 
@@ -684,7 +696,7 @@ Passionate about emerging technologies, web development, and digital innovation.
             <li class="skills-item">
 
               <div class="title-wrapper">
-                <h5 class="h5">Networking Administrator</h5>
+                <h5 class="h5" data-i18n="networkingAdmin">Networking Administrator</h5>
                 <data value="50">50%</data>
               </div>
 
@@ -711,7 +723,7 @@ Passionate about emerging technologies, web development, and digital innovation.
       <article class="portfolio" data-page="portfolio">
 
         <header>
-          <h2 class="h2 article-title">Portfolio</h2>
+          <h2 class="h2 article-title" data-i18n="portfolio">Portfolio</h2>
         </header>
 
         <section class="projects">
@@ -719,19 +731,19 @@ Passionate about emerging technologies, web development, and digital innovation.
           <ul class="filter-list">
 
             <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
+              <button class="active" data-filter-btn data-i18n="all">All</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web design</button>
+              <button data-filter-btn data-i18n="webDesign">Web design</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Applications</button>
+              <button data-filter-btn data-i18n="applications">Applications</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web development</button>
+              <button data-filter-btn data-i18n="webDevelopment">Web development</button>
             </li>
 
           </ul>
@@ -740,7 +752,7 @@ Passionate about emerging technologies, web development, and digital innovation.
 
             <button class="filter-select" data-select>
 
-              <div class="select-value" data-selecct-value>Select category</div>
+              <div class="select-value" data-selecct-value data-i18n="selectCategory">Select category</div>
 
               <div class="select-icon">
                 <ion-icon name="chevron-down"></ion-icon>
@@ -751,19 +763,19 @@ Passionate about emerging technologies, web development, and digital innovation.
             <ul class="select-list">
 
               <li class="select-item">
-                <button data-select-item>All</button>
+                <button data-select-item data-i18n="all">All</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web design</button>
+                <button data-select-item data-i18n="webDesign">Web design</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Applications</button>
+                <button data-select-item data-i18n="applications">Applications</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web development</button>
+                <button data-select-item data-i18n="webDevelopment">Web development</button>
               </li>
 
             </ul>
@@ -783,9 +795,9 @@ Passionate about emerging technologies, web development, and digital innovation.
                   <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Finance</h3>
+                <h3 class="project-title" data-i18n="projectFinance">Finance</h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category" data-i18n="projectCategoryWebDev">Web development</p>
 
               </a>
             </li>
@@ -801,9 +813,9 @@ Passionate about emerging technologies, web development, and digital innovation.
                   <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Orizon</h3>
+                <h3 class="project-title" data-i18n="projectOrizon">Orizon</h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category" data-i18n="projectCategoryWebDev">Web development</p>
 
               </a>
             </li>
@@ -819,9 +831,9 @@ Passionate about emerging technologies, web development, and digital innovation.
                   <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Fundo</h3>
+                <h3 class="project-title" data-i18n="projectFundo">Fundo</h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category" data-i18n="projectCategoryWebDesign">Web design</p>
 
               </a>
             </li>
@@ -837,9 +849,9 @@ Passionate about emerging technologies, web development, and digital innovation.
                   <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Brawlhalla</h3>
+                <h3 class="project-title" data-i18n="projectBrawlhalla">Brawlhalla</h3>
 
-                <p class="project-category">Applications</p>
+                <p class="project-category" data-i18n="projectCategoryApps">Applications</p>
 
               </a>
             </li>
@@ -855,9 +867,9 @@ Passionate about emerging technologies, web development, and digital innovation.
                   <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
                 </figure>
 
-                <h3 class="project-title">DSM.</h3>
+                <h3 class="project-title" data-i18n="projectDSM">DSM.</h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category" data-i18n="projectCategoryWebDesign">Web design</p>
 
               </a>
             </li>
@@ -873,9 +885,9 @@ Passionate about emerging technologies, web development, and digital innovation.
                   <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">MetaSpark</h3>
+                <h3 class="project-title" data-i18n="projectMetaSpark">MetaSpark</h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category" data-i18n="projectCategoryWebDesign">Web design</p>
 
               </a>
             </li>
@@ -891,9 +903,9 @@ Passionate about emerging technologies, web development, and digital innovation.
                   <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Summary</h3>
+                <h3 class="project-title" data-i18n="projectSummary">Summary</h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category" data-i18n="projectCategoryWebDev">Web development</p>
 
               </a>
             </li>
@@ -909,9 +921,9 @@ Passionate about emerging technologies, web development, and digital innovation.
                   <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Task Manager</h3>
+                <h3 class="project-title" data-i18n="projectTaskManager">Task Manager</h3>
 
-                <p class="project-category">Applications</p>
+                <p class="project-category" data-i18n="projectCategoryApps">Applications</p>
 
               </a>
             </li>
@@ -927,9 +939,9 @@ Passionate about emerging technologies, web development, and digital innovation.
                   <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Arrival</h3>
+                <h3 class="project-title" data-i18n="projectArrival">Arrival</h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category" data-i18n="projectCategoryWebDev">Web development</p>
 
               </a>
             </li>
@@ -951,7 +963,7 @@ Passionate about emerging technologies, web development, and digital innovation.
       <article class="blog" data-page="blog">
 
         <header>
-          <h2 class="h2 article-title">Blog</h2>
+          <h2 class="h2 article-title" data-i18n="blog">Blog</h2>
         </header>
 
         <section class="blog-posts">
@@ -968,18 +980,16 @@ Passionate about emerging technologies, web development, and digital innovation.
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category" data-i18n="blogCategory">Design</p>
 
                     <span class="dot"></span>
 
                     <time datetime="2022-02-23">Fab 23, 2022</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+                  <h3 class="h3 blog-item-title" data-i18n="blogTitle1">Design conferences in 2022</h3>
 
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
+                  <p class="blog-text" data-i18n="blogText1">Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
 
                 </div>
 
@@ -996,18 +1006,16 @@ Passionate about emerging technologies, web development, and digital innovation.
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category" data-i18n="blogCategory">Design</p>
 
                     <span class="dot"></span>
 
                     <time datetime="2022-02-23">Fab 23, 2022</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+                  <h3 class="h3 blog-item-title" data-i18n="blogTitle2">Best fonts every designer</h3>
 
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
+                  <p class="blog-text" data-i18n="blogText2">Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.</p>
 
                 </div>
 
@@ -1024,18 +1032,16 @@ Passionate about emerging technologies, web development, and digital innovation.
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category" data-i18n="blogCategory">Design</p>
 
                     <span class="dot"></span>
 
                     <time datetime="2022-02-23">Fab 23, 2022</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
+                  <h3 class="h3 blog-item-title" data-i18n="blogTitle3">Design digest #80</h3>
 
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
+                  <p class="blog-text" data-i18n="blogText3">Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.</p>
 
                 </div>
 
@@ -1052,18 +1058,16 @@ Passionate about emerging technologies, web development, and digital innovation.
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category" data-i18n="blogCategory">Design</p>
 
                     <span class="dot"></span>
 
                     <time datetime="2022-02-23">Fab 23, 2022</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
+                  <h3 class="h3 blog-item-title" data-i18n="blogTitle4">UI interactions of the week</h3>
 
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
+                  <p class="blog-text" data-i18n="blogText4">Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.</p>
 
                 </div>
 
@@ -1080,18 +1084,16 @@ Passionate about emerging technologies, web development, and digital innovation.
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category" data-i18n="blogCategory">Design</p>
 
                     <span class="dot"></span>
 
                     <time datetime="2022-02-23">Fab 23, 2022</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
+                  <h3 class="h3 blog-item-title" data-i18n="blogTitle5">The forgotten art of spacing</h3>
 
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
+                  <p class="blog-text" data-i18n="blogText5">Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
                 </div>
 
@@ -1108,18 +1110,16 @@ Passionate about emerging technologies, web development, and digital innovation.
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category" data-i18n="blogCategory">Design</p>
 
                     <span class="dot"></span>
 
                     <time datetime="2022-02-23">Fab 23, 2022</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
+                  <h3 class="h3 blog-item-title" data-i18n="blogTitle6">Design digest #79</h3>
 
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
+                  <p class="blog-text" data-i18n="blogText6">Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.</p>
 
                 </div>
 
@@ -1143,7 +1143,7 @@ Passionate about emerging technologies, web development, and digital innovation.
       <article class="contact" data-page="contact">
 
         <header>
-          <h2 class="h2 article-title">Contact</h2>
+          <h2 class="h2 article-title" data-i18n="contact">Contact</h2>
         </header>
 
         <section class="mapbox" data-mapbox>
@@ -1156,21 +1156,21 @@ Passionate about emerging technologies, web development, and digital innovation.
 
         <section class="contact-form">
 
-          <h3 class="h3 form-title">Contact Form</h3>
+          <h3 class="h3 form-title" data-i18n="contactForm">Contact Form</h3>
 
           <form action="#" class="form" data-form>
 
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input data-i18n="fullName">
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input data-i18n="emailAddress">
             </div>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input data-i18n="yourMessage"></textarea>
 
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
+              <span data-i18n="sendMessage">Send Message</span>
             </button>
 
           </form>
@@ -1191,6 +1191,7 @@ Passionate about emerging technologies, web development, and digital innovation.
   <!--
     - custom js link
   -->
+  <script src="./assets/js/lang.js"></script>
   <script src="./assets/js/script.js"></script>
 
   <!--

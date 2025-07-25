@@ -143,17 +143,88 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
+    const pageKey = this.getAttribute('data-i18n');
+    for (let j = 0; j < pages.length; j++) {
+      if (pages[j].dataset.page === pageKey) {
+        pages[j].classList.add("active");
+        navigationLinks[j].classList.add("active");
         window.scrollTo(0, 0);
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        pages[j].classList.remove("active");
+        navigationLinks[j].classList.remove("active");
       }
     }
-
   });
 }
+
+// Detecta idioma guardado o navegador
+let lang = localStorage.getItem('lang');
+if (!lang) {
+  const userLang = navigator.language || navigator.userLanguage;
+  lang = userLang.startsWith('es') ? 'es' : 'en';
+}
+
+function setLang(lang) {
+  localStorage.setItem('lang', lang);
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const translation = translations[lang][key];
+    if (el.placeholder !== undefined && el.placeholder !== "") {
+      el.placeholder = translation || el.placeholder;
+    }
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.setAttribute('placeholder', translation || el.placeholder);
+    } else if (
+      el.tagName === 'P' ||
+      el.tagName === 'FIGCAPTION' ||
+      el.classList.contains('service-item-text') ||
+      el.classList.contains('timeline-text') ||
+      el.classList.contains('blog-text')
+    ) {
+      if (translation) {
+        el.innerHTML = translation.replace(/\n/g, '<br>');
+      }
+    } else {
+      if (translation) {
+        el.textContent = translation;
+      }
+    }
+  });
+  // Resalta el idioma activo
+  if (document.getElementById('btn-es') && document.getElementById('btn-en')) {
+    document.getElementById('btn-es').style.opacity = lang === 'es' ? '1' : '0.5';
+    document.getElementById('btn-en').style.opacity = lang === 'en' ? '1' : '0.5';
+    document.getElementById('btn-es').style.fontWeight = lang === 'es' ? 'bold' : 'normal';
+    document.getElementById('btn-en').style.fontWeight = lang === 'en' ? 'bold' : 'normal';
+  }
+}
+
+setLang(lang);
+
+// Eventos para los botones de idioma
+if (document.getElementById('btn-es') && document.getElementById('btn-en')) {
+  document.getElementById('btn-es').addEventListener('click', function() {
+    setLang('es');
+  });
+  document.getElementById('btn-en').addEventListener('click', function() {
+    setLang('en');
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var btnSeeMore = document.getElementById('btn-see-more-exp');
+  var experienceExtras = document.querySelectorAll('.experience-extra');
+  var expanded = false;
+  if (btnSeeMore) {
+    btnSeeMore.addEventListener('click', function() {
+      expanded = !expanded;
+      experienceExtras.forEach(function(item) {
+        item.style.display = expanded ? 'list-item' : 'none';
+      });
+      // Cambia el texto del botón según el estado y el idioma
+      var lang = localStorage.getItem('lang') || (navigator.language || navigator.userLanguage).startsWith('es') ? 'es' : 'en';
+      btnSeeMore.textContent = expanded ? translations[lang].seeLess : translations[lang].seeMore;
+      btnSeeMore.setAttribute('data-i18n', expanded ? 'seeLess' : 'seeMore');
+    });
+  }
+});
