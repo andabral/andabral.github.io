@@ -146,15 +146,25 @@ const translations = {
     edu3Title: "High school Military Tnte. Hugo Ortiz",
     edu3Desc: "Graduate of Mathematical Physics.",
     // Experience
-    exp1Title: "Creative director",
+    exp1Title: "Zonal Analyst - Zonal Coordination 5 - MSP",
     exp1Ano: "2023 - Present",
-    exp1Desc: "Responsible for creative direction and management of innovative projects.",
-    exp2Title: "Art director",
+    exp1Desc: "▪ Supervise, manage, and execute technological projects at the zonal level.\n▪ Implementation and development of new technologies (Git, Kafka, Keycloak, NestJS, React, among others).\n▪ Administration and development of HIS, LIS, and RIS systems.\n▪ Administration and control of containers (Docker) and cloud services (IaaS, SaaS, BaaS).",
+
+    exp2Title: "O&M Data Center Analyst - CNT",
     exp2Ano: "2022 - 2023",
-    exp2Desc: "In charge of artistic direction and supervision of creative teams.",
-    exp3Title: "Web designer",
+    exp2Desc: "❖ Supervise, manage, and execute technological projects at the data center level.\n❖ Administration and monitoring of SaaS, IaaS, BaaS, DaaS systems, air conditioning, fire control, access control at the Data Center level.\n❖ Technical support to internal and external users of the institution in applications, databases, and security.",
+
+    exp3Title: "Zonal Analyst - Zonal Coordination 5 - MSP",
     exp3Ano: "2020 - 2022",
-    exp3Desc: "Design and development of attractive and functional websites.",
+    exp3Desc: "▪ Supervise, manage, and execute technological projects at the zonal level.\n▪ Implementation and development of new technological tools in the Hospitals and Districts of Zone 5.\n▪ Administration and development of modules of the SAIS Hospital System (Comprehensive Health Administration System) at the zonal level.\n▪ Administration and control of application servers, databases, and security.",
+
+    exp4Title: "District Analyst - District Directorate 09D18 - MSP",
+    exp4Ano: "2018 - 2020",
+    exp4Desc: "▪ Supervise, manage, and execute MSP technological projects at the district level.\n▪ Administration, diagnosis, and repair of physical and virtual networks and servers of the district's health centers, Basic Hospital Naranjito, and District Headquarters.\n▪ Administration and development of modules of the SAIS Hospital System (Comprehensive Health Administration System).\n▪ Administration of security devices. Technical support to users, contract administrator, and supplier management.",
+
+    exp5Title: "Zonal Analyst - Zonal Coordination 5 - MSP",
+    exp5Ano: "2017 - 2018",
+    exp5Desc: "▪ Supervise, manage, and execute technological projects at the zonal level.\n❖ Implementation and development of new technological tools in the Hospitals and Districts of Zone 5",
     // Projects
     projectFinance: "Finance",
     projectOrizon: "Orizon",
