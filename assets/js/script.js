@@ -1,5 +1,6 @@
 'use strict';
 
+import './contact.js';
 
 
 // element toggle function
@@ -228,4 +229,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-import './contact.js';
