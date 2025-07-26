@@ -1163,22 +1163,12 @@
 
           <h3 class="h3 form-title" data-i18n="contactForm">Contact Form</h3>
 
-          <form action="contact.php" method="POST" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input data-i18n="fullName">
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input data-i18n="emailAddress">
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input data-i18n="yourMessage"></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span data-i18n="sendMessage">Send Message</span>
-            </button>
-
-          </form>
+          <form id="contactForm">
+    <input type="text" name="fullname" placeholder="Nombre" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Mensaje" required></textarea>
+    <button type="submit">Enviar</button>
+</form>
 
         </section>
 
