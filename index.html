@@ -32,11 +32,19 @@
 
   <!-- Selector de idioma -->
   <div id="lang-switcher" style="position: fixed; top: 20px; right: 30px; z-index: 9999; display: flex; gap: 10px;">
-    <button id="btn-es" data-lang="es" aria-label="Español" style="background: none; border: none; cursor: pointer; font-size: 24px; outline: none;">
-      <span id="icon-es" style="font-size: 24px;">🇪🇸</span>
+    <button id="btn-es" data-lang="es" aria-label="Español">
+      <svg width="24" height="24" viewBox="0 0 3 2">
+        <rect width="3" height="2" fill="#aa151b"/>         <!-- Rojo -->
+        <rect y="0.5" width="3" height="1" fill="#f1bf00"/> <!-- Amarillo -->
+        <rect y="1.5" width="3" height="0.5" fill="#aa151b"/> <!-- Rojo -->
+      </svg>
     </button>
-    <button id="btn-en" data-lang="en" aria-label="English" style="background: none; border: none; cursor: pointer; font-size: 24px; outline: none;">
-      <span id="icon-en" style="font-size: 24px;">🇺🇸</span>
+    <button id="btn-en" data-lang="en" aria-label="English">
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path fill="#00247D" d="M0 0h24v24H0z"/>
+        <path fill="#FFF" d="M1 1h22v22H1z"/>
+        <path fill="#CF142B" d="M11 1h2v22h-2zM1 11h22v2H1z"/>
+      </svg>
     </button>
   </div>
 
